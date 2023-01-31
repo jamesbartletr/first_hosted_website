@@ -4,14 +4,13 @@
     <title>Button Counter</title>
   </head>
   <body>
-    <p id="counter">0</p>
+    <p id="counter">{{ counter }}</p>
     <button id="increment-button">Increment</button>
 
     <script>
       const button = document.getElementById("increment-button");
-      const counter = document.getElementById("counter");
       button.addEventListener("click", function() {
-        counter.innerHTML = parseInt(counter.innerHTML) + 1;
+        fetch('/increment', { method: 'POST' });
       });
     </script>
   </body>
